@@ -3,8 +3,21 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
+import { Nunito, DM_Sans } from 'next/font/google'
+
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'})
+const nunito = Nunito({ 
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+})
+
+const dmSans = DM_Sans({ 
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 const fontMono = Geist_Mono({
   subsets: ["latin"],
@@ -20,9 +33,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
+      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable, nunito.variable, dmSans.variable)}
     >
-      <body>
+      <body className="bg-[#F8FAFC] text-[#0F172A]">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

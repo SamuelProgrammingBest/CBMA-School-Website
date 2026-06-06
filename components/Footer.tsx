@@ -1,0 +1,83 @@
+import {
+  Mail,
+  MapPin,
+  Phone,
+} from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
+import React from "react"
+import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6'
+
+
+const Footer = () => {
+  return (
+    <footer className="w-full bg-primary py-12 text-gray-400">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 md:grid-cols-3">
+        
+        {/* Column 1 - Brand */}
+        <div className="md:col-span-1">
+          {/* ✅ Replace placeholder image with school name until real logo arrives */}
+          <h3 className="font-heading text-2xl font-bold text-white mb-2">
+            CBMA
+          </h3>
+          <p className="text-emerald-100 text-sm mb-4">
+            Cornerstone Baptist Model Academy — nurturing bright minds since 2003.
+          </p>
+
+          {/* ✅ Actual social icons instead of InspectionPanel */}
+          <div className="flex gap-3">
+            <Link href="https://facebook.com" target="_blank">
+              <FaFacebook className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            </Link>
+            <Link href="https://instagram.com" target="_blank">
+              <FaInstagram className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            </Link>
+            <Link href="https://twitter.com" target="_blank">
+              <FaXTwitter className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            </Link>
+            <Link href="https://youtube.com" target="_blank">
+              <FaYoutube className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            </Link>
+          </div>
+        </div>
+
+        {/* Column 2 - Quick Links */}
+        <div>
+          <h4 className="mb-3 text-xl font-semibold text-white">Quick Links</h4>
+          <ul className="space-y-2 text-sm">
+            <li><a href="/about" className="text-emerald-100 transition hover:text-white">About</a></li>
+            <li><a href="/admissions" className="text-emerald-100 transition hover:text-white">Admissions</a></li>
+            <li><a href="/gallery" className="text-emerald-100 transition hover:text-white">Gallery</a></li>
+            <li><a href="/contact" className="text-emerald-100 transition hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Column 3 - Contact */}
+        <div>
+          <h4 className="mb-3 text-xl font-semibold text-white">Contact Us</h4>
+          <ul className="space-y-4 text-sm text-emerald-100">
+            <li className="flex gap-3">
+              <MapPin className="h-5 w-5 shrink-0 text-emerald-100" />
+              Your school address here
+            </li>
+            <li className="flex gap-3">
+              <Phone className="h-5 w-5 shrink-0 text-emerald-100" />
+              +234 xxx xxx xxxx
+            </li>
+            {/* ✅ removed duplicate emoji */}
+            <li className="flex gap-3">
+              <Mail className="h-5 w-5 shrink-0 text-emerald-100" />
+              info@cbma.edu.ng
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="mt-8 border-t border-emerald-500 pt-6 text-center text-sm text-emerald-200">
+        © 2025 Cornerstone Baptist Model Academy. All rights reserved.
+      </div>
+    </footer>
+  )
+}
+
+export default Footer
