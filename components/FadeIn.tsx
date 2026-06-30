@@ -1,7 +1,13 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React from "react"
+import { motion } from "motion/react"
 
-const FadeIn = ({ children, className }: { children: React.ReactNode, className?: string }) => (
+const FadeIn = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) => (
   <motion.div
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}

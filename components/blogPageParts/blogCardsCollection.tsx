@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import BlogCard from "../BlogCard"
 import FadeIn from "../FadeIn"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { container, item } from "@/lib/utils"
 import { useAuth } from "@/context/AuthContext"
 import { apiCall } from "@/lib/api"
@@ -21,7 +21,7 @@ const BlogCardsCol = () => {
       })
       setData(response.data)
     } catch (error) {
-      setErrorMsg(error instanceof Error ? error.message:"")
+      setErrorMsg(error instanceof Error ? error.message : "")
     } finally {
       setLoading(false)
     }
@@ -36,11 +36,11 @@ const BlogCardsCol = () => {
   }
 
   if (errorMsg) {
-    return <p className="text-center font-bold text-xl">Refresh to get blogs</p> // your "Refresh to get blogs" message
+    return <p className="text-center text-xl font-bold">Refresh to get blogs</p> // your "Refresh to get blogs" message
   }
 
   return (
-    <FadeIn className="px-6 pb-24 mt-25">
+    <FadeIn className="mt-25 px-6 pb-24">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
@@ -49,18 +49,20 @@ const BlogCardsCol = () => {
           whileInView="show"
           viewport={{ once: true }}
         >
-          {data.filter(d => d.isPublished).map((blog, i) => (
-            <BlogCard
-              img={blog.coverImage}
-              title={blog.title}
-              category={"Academic"}
-              desc={blog.shortDesc}
-              alt={blog.shortDesc}
-              key={blog._id}
-              variant={item}
-              link={blog.slug}
-            />
-          ))}
+          {data
+            .filter((d) => d.isPublished)
+            .map((blog, i) => (
+              <BlogCard
+                img={blog.coverImage}
+                title={blog.title}
+                category={"Academic"}
+                desc={blog.shortDesc}
+                alt={blog.shortDesc}
+                key={blog._id}
+                variant={item}
+                link={blog.slug}
+              />
+            ))}
         </motion.div>
       </div>
     </FadeIn>

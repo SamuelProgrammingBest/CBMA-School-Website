@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react"
 import React from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { FaWhatsapp } from "react-icons/fa6"
 
 const ContactInfo = () => {
@@ -20,7 +20,8 @@ const ContactInfo = () => {
     {
       icon: <MapPin className="h-5 w-5 shrink-0 text-accent" />,
       title: "Visit Us",
-      description: "Plot C103, B Close, Mike Okiro Rd. (522 Road), Off 1st Avenue Road, Gwarinpa Abuja Municipal Area, Gwarinpa, Federal Capital Territory",
+      description:
+        "Plot C103, B Close, Mike Okiro Rd. (522 Road), Off 1st Avenue Road, Gwarinpa Abuja Municipal Area, Gwarinpa, Federal Capital Territory",
     },
     {
       icon: <Phone className="h-5 w-5 shrink-0 text-accent" />,

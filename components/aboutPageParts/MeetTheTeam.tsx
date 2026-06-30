@@ -11,7 +11,7 @@ import {
 import { Button } from "../ui/button"
 import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import Image from "next/image"
 
 const MeetTheTeam = () => {
@@ -37,7 +37,7 @@ const MeetTheTeam = () => {
             Meet Our <span className="text-primary">Team</span>
           </h2>
         </FadeIn>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {team.map((member, i) => (
             <motion.div
               key={i}

@@ -1,7 +1,7 @@
 "use client"
 import GalleryCard from "@/components/GalleryCard"
 import React, { useEffect, useState } from "react"
-import { motion } from "framer-motion"
+import { motion } from "motion/react"
 import { container, item } from "@/lib/utils"
 import SectionHeader from "@/components/SectionHeader"
 import { GalleryImage } from "@/app/admin/dashboard/gallery/page"

@@ -7,8 +7,13 @@ import {
   Users,
 } from "lucide-react"
 import FadeIn from "../FadeIn"
-import { motion } from "framer-motion"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../ui/accordion"
+import { motion } from "motion/react"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../ui/accordion"
 
 const CoreValues = () => {
   const values = [
@@ -66,7 +71,7 @@ const CoreValues = () => {
                   {value.title}
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="pl-11 pb-3 text-slate-600 leading-relaxed text-md">
+              <AccordionContent className="text-md pb-3 pl-11 leading-relaxed text-slate-600">
                 {value.text}
               </AccordionContent>
             </AccordionItem>
