@@ -27,11 +27,8 @@ const NavBar = () => {
   const pathName = usePathname()
 
   return (
-    <motion.div
+    <div
       className="fixed z-50 w-full"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ delay: 0.2, duration: 0.5, type: "tween" }}
     >
       <NavigationMenu className="w-full bg-white/80 shadow-sm backdrop-blur-sm">
         <div className="flex w-full items-center justify-between px-6 py-4">
@@ -107,7 +104,7 @@ const NavBar = () => {
           )}
         </AnimatePresence>
       </NavigationMenu>
-    </motion.div>
+    </div>
   )
 }
 
