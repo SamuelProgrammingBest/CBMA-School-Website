@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+// import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { Nunito, DM_Sans } from 'next/font/google'
 
@@ -36,7 +36,7 @@ export default function RootLayout({
       className={cn("antialiased", fontMono.variable, "font-sans", geist.variable, nunito.variable, dmSans.variable)}
     >
       <body className="bg-[#F8FAFC] text-[#0F172A]">
-        <ThemeProvider>{children}</ThemeProvider>
+        {children}
       </body>
     </html>
   )
