@@ -1,14 +1,16 @@
 const TOKEN_KEY = "cbma_token"
 type JwtPayload = { exp?: number }
 
-export const setToken = (token: string) =>
-{
-  if (typeof window === "undefined") return null
+export const setToken = (token: string) => {
+  //This is some lines to change
+  if (typeof window === "undefined") return
   localStorage.setItem(TOKEN_KEY, token)
 }
 
+// So there we have it
+
 export const getToken = () => {
-  if (typeof window === "undefined") return 
+  if (typeof window === "undefined") return null
   return localStorage.getItem(TOKEN_KEY)
 }
 
@@ -16,8 +18,6 @@ export const deleteToken = () => {
   if (typeof window === "undefined") return
   localStorage.removeItem(TOKEN_KEY)
 }
-
-
 
 export const decodeToken = (token: string): JwtPayload | null => {
   try {
