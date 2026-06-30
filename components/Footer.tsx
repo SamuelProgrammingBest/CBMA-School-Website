@@ -6,7 +6,7 @@ import {
 import Image from "next/image"
 import Link from "next/link"
 import React from "react"
-import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from 'react-icons/fa6'
+import { FaFacebook, FaInstagram, FaTiktok, FaWhatsapp, FaXTwitter, FaYoutube } from 'react-icons/fa6'
 
 
 const Footer = () => {
@@ -26,17 +26,17 @@ const Footer = () => {
 
           {/* ✅ Actual social icons instead of InspectionPanel */}
           <div className="flex gap-3">
-            <Link href="https://facebook.com" target="_blank">
+            <Link href="https://www.facebook.com/share/1T9dVxMMgr/" target="_blank">
               <FaFacebook className="h-5 w-5 text-emerald-100 hover:text-white transition" />
             </Link>
-            <Link href="https://instagram.com" target="_blank">
+            <Link href="https://www.instagram.com/cornerstoneacademyabuja?igsh=MW5janY4d2tyaDUzbg==" target="_blank">
               <FaInstagram className="h-5 w-5 text-emerald-100 hover:text-white transition" />
             </Link>
-            <Link href="https://twitter.com" target="_blank">
-              <FaXTwitter className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            <Link href="https://www.tiktok.com/@cornerstoneacademyabuja?_r=1&_t=ZS-97Xdd2aK9Q4" target="_blank">
+              <FaTiktok className="h-5 w-5 text-emerald-100 hover:text-white transition" />
             </Link>
-            <Link href="https://youtube.com" target="_blank">
-              <FaYoutube className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            <Link href="https://whatsapp.com/channel/0029VbBkNqI1CYoY01rtF21s" target="_blank">
+              <FaWhatsapp className="h-5 w-5 text-emerald-100 hover:text-white transition" />
             </Link>
           </div>
         </div>
@@ -58,16 +58,16 @@ const Footer = () => {
           <ul className="space-y-4 text-sm text-emerald-100">
             <li className="flex gap-3">
               <MapPin className="h-5 w-5 shrink-0 text-emerald-100" />
-              Your school address here
+              Plot C103, B Close, Mike Okiro Rd. (522 Road), Off 1st Avenue Road, Gwarinpa Abuja Municipal Area, Gwarinpa, Federal Capital Territory
             </li>
             <li className="flex gap-3">
               <Phone className="h-5 w-5 shrink-0 text-emerald-100" />
-              +234 xxx xxx xxxx
+              +234 9029261117
             </li>
             {/* ✅ removed duplicate emoji */}
             <li className="flex gap-3">
               <Mail className="h-5 w-5 shrink-0 text-emerald-100" />
-              info@cbma.edu.ng
+              cornerstonebaptistmodelacademy@gmail.com
             </li>
           </ul>
         </div>

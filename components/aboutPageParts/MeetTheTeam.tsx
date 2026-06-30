@@ -12,6 +12,7 @@ import { Button } from "../ui/button"
 import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6"
 import Link from "next/link"
 import { motion } from "framer-motion"
+import Image from "next/image"
 
 const MeetTheTeam = () => {
   const team = [
@@ -26,7 +27,7 @@ const MeetTheTeam = () => {
   ]
 
   return (
-    <section className="bg-slate-50 py-16">
+    <section className="bg-slate-50 py-24">
       <div className="mx-auto max-w-6xl px-6">
         <FadeIn className="mb-12 text-center">
           <p className="mb-2 text-sm font-bold text-primary">
@@ -36,7 +37,7 @@ const MeetTheTeam = () => {
             Meet Our <span className="text-primary">Team</span>
           </h2>
         </FadeIn>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {team.map((member, i) => (
             <motion.div
               key={i}
@@ -48,10 +49,11 @@ const MeetTheTeam = () => {
               <Card className="group relative mx-auto w-full max-w-sm overflow-hidden border-slate-200 pt-0 transition-all duration-300 hover:border-emerald-300 hover:shadow-xl">
                 {/* Image + overlay */}
                 <div className="relative aspect-square overflow-hidden">
-                  <img
-                    src="/assets/medium.jpg"
+                  <Image
+                    src={member.img}
+                    fill
                     alt={member.name}
-                    className="h-full w-full object-cover grayscale transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                    className="object-cover"
                   />
 
                   {/* Dark overlay — fades out on hover */}

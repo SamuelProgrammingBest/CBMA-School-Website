@@ -12,7 +12,7 @@ import React from "react"
 
 const LandingPage = () => {
   return (
-    <div className="mt-[100px] overflow-hidden">
+    <main className="mt-[100px] overflow-hidden min-h-screen">
       <HeroSection />
       <div className="mt-[120px] flex w-full items-center justify-center">
         <AboutLanding />
@@ -38,7 +38,7 @@ const LandingPage = () => {
       <div className="mt-[120px] flex w-full items-center justify-center">
         <NewsletterForm />
       </div>
-    </div>
+    </main>
   )
 }
 

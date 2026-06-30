@@ -3,13 +3,13 @@ import FadeIn from "../FadeIn";
 import { Button } from "../ui/button";
 
 const AboutCTA = () => (
-  <FadeIn>
+  <FadeIn className="py-24">
   <section className="dotted py-16 px-6 text-center">
     <h2 className="fredoka mb-4 text-3xl font-bold text-foreground md:text-4xl">
       Ready to Join the{" "}
       <span className="text-primary">CBMA Family?</span>
     </h2>
-    <p className="mb-8 mx-auto max-w-lg text-secondary">
+    <p className="mb-8 mx-auto max-w-lg text-slate-600">
       Give your child the foundation they deserve. Applications are open.
     </p>
     <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">

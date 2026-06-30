@@ -74,7 +74,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, x: -70 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 1, duration: 0.5, type: "tween" }}
-            className="mt-6 w-full max-w-[600px]"
+            className="mt-6 w-full max-w-150"
           >
             Developing your child's mind and body requires constant A-grade
             efforts. And{" "}

@@ -28,15 +28,15 @@ const AboutLanding = () => {
           repellat commodi?
         </p>
 
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
-          <Link href="/about" className="cursor-pointer">
+        {/* <div className="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <Link href="/contact" className="cursor-pointer">
             <Button className="cursor-pointer bg-primary p-5">Enquire</Button>
           </Link>
           <Button className="cursor-pointer bg-primary p-5">
             <WholeWordIcon width={30} height={30} />
             Ask more on Whatsapp
           </Button>
-        </div>
+        </div> */}
       </div>
 
       {/* ✅ Fixed: hidden on mobile, only shows on large screens */}

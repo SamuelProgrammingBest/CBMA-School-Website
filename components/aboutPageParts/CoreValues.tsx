@@ -45,7 +45,7 @@ const CoreValues = () => {
   ]
 
   return (
-    <section className="mx-auto max-w-6xl px-6 py-16">
+    <section className="mx-auto max-w-6xl px-6 py-24">
       <FadeIn className="mb-12 text-center">
         <p className="mb-2 text-sm font-bold text-primary">WHAT WE STAND FOR</p>
         <h2 className="text-2xl font-bold text-foreground md:text-3xl">
@@ -66,7 +66,7 @@ const CoreValues = () => {
                   {value.title}
                 </span>
               </AccordionTrigger>
-              <AccordionContent className="pl-11 pb-3 text-secondary leading-relaxed text-md">
+              <AccordionContent className="pl-11 pb-3 text-slate-600 leading-relaxed text-md">
                 {value.text}
               </AccordionContent>
             </AccordionItem>

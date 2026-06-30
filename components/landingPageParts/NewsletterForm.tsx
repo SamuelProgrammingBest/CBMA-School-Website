@@ -1,31 +1,32 @@
 import { Button } from "../ui/button"
 import FadeIn from "../FadeIn"
+import Link from "next/link"
 
 const NewsletterForm = () => {
   return (
-    <FadeIn className="dotted w-full rounded-lg p-6 text-center text-white md:p-16">
-      {/* ✅ w-1/2 → w-full on mobile, w-1/2 on desktop */}
-      <div className="mx-auto w-full rounded-lg bg-white p-6 py-6 md:w-1/2 md:p-10 md:py-12">
-        <h2 className="fredoka mb-2 font-heading text-2xl font-semibold text-foreground md:text-3xl">
-          Stay in the <span className="text-primary">Loop</span>
-        </h2>
-        <p className="mb-6 text-secondary">
-          Get updates on events, admissions and school news
-        </p>
-
-        {/* ✅ flex-col on mobile, flex-row on desktop */}
-        <div className="mx-auto flex max-w-md flex-col gap-3 px-4 lg:flex-row">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 rounded-xl px-4 py-3 text-gray-800 outline focus:outline-2 focus:outline-accent"
-          />
-          <Button className="text-md w-full cursor-pointer rounded-xl bg-primary p-6 font-bold text-white transition hover:bg-emerald-700 lg:w-auto">
-            Subscribe
-          </Button>
-        </div>
-      </div>
-    </FadeIn>
+    <FadeIn className="py-24">
+  <section className="dotted py-16 px-6 text-center">
+    <h2 className="fredoka mb-4 text-3xl font-bold text-foreground md:text-4xl">
+      Ready to Join the{" "}
+      <span className="text-primary">CBMA Family?</span>
+    </h2>
+    <p className="mb-8 mx-auto max-w-lg text-slate-600">
+      Give your child the foundation they deserve. Applications are open.
+    </p>
+    <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+      <Link href="/admissions">
+        <Button className="w-full bg-primary px-8 py-5 font-bold text-white hover:bg-emerald-700 sm:w-auto cursor-pointer">
+          Apply Now
+        </Button>
+      </Link>
+      <Link href="/contact">
+        <Button className="w-full border-2 border-primary bg-transparent px-8 py-5 font-bold text-primary hover:bg-primary hover:text-white sm:w-auto transition-all duration-300 cursor-pointer">
+          Contact Us
+        </Button>
+      </Link>
+    </div>
+  </section>
+</FadeIn>
   )
 }
 
