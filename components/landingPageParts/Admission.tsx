@@ -3,6 +3,7 @@ import { motion } from "motion/react"
 import { Button } from "../ui/button"
 import { PartyPopper } from "lucide-react"
 import FadeIn from "../FadeIn"
+import Link from "next/link"
 
 const AdmissionAd = () => {
   return (
@@ -37,9 +38,11 @@ const AdmissionAd = () => {
           className="aspect-4/3 w-full max-w-125 rounded-md object-cover"
         />
 
+        <Link href="/apply">
         <Button className="text-md cursor-pointer bg-primary p-5 text-white hover:bg-accent-foreground">
           Apply Now
         </Button>
+        </Link>
       </div>
     </FadeIn>
   )

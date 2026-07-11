@@ -21,7 +21,7 @@ const BlogCard = ({img, alt, category, title, desc, variant, link }: BlogCard) =
       viewport={{ once: true }}
       // ✅ full width on mobile, 1/3 on desktop
       // ✅ white card instead of lime green
-      className="w-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:shadow-xl"
+      className="w-full overflow-hidden rounded-3xl border border-slate-200 bg-white p-6 transition-all duration-300 hover:-translate-y-2 hover:border-accent hover:shadow-xl cursor-pointer"
     >
       <Image
         src={img}

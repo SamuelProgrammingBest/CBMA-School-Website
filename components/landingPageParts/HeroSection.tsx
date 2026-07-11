@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import { Button } from "../ui/button"
+import Link from "next/link"
 
 const HeroSection = () => {
   const container = {
@@ -28,7 +29,7 @@ const HeroSection = () => {
       <div className="relative flex h-screen w-full items-center">
         {/* Background image — this stays the same */}
         <motion.img
-          src="/assets/3907.jpg"
+          src="/assets/hero.jpg"
           alt="Child"
           style={{
             position: "absolute",
@@ -91,7 +92,9 @@ const HeroSection = () => {
               transition={{ delay: 1.35, duration: 0.5, type: "tween" }}
             >
               <Button className="text-md cursor-pointer border-2 border-accent bg-accent p-5 text-white hover:border-accent-foreground hover:bg-accent-foreground">
-                Apply Now
+                <Link href="/apply">
+                  Apply Now
+                </Link>
               </Button>
             </motion.div>
             <motion.div
@@ -100,7 +103,9 @@ const HeroSection = () => {
               transition={{ delay: 1.25, duration: 0.5, type: "tween" }}
             >
               <Button className="text-md cursor-pointer border-2 border-accent bg-transparent p-5 hover:border-accent-foreground hover:bg-accent-foreground hover:text-white">
-                Explore
+                <Link href="/contact">
+                Enquire
+                </Link>
               </Button>
             </motion.div>
           </div>

@@ -14,7 +14,7 @@ const NewsletterForm = () => {
       Give your child the foundation they deserve. Applications are open.
     </p>
     <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-      <Link href="/admissions">
+      <Link href="/apply">
         <Button className="w-full bg-primary px-8 py-5 font-bold text-white hover:bg-emerald-700 sm:w-auto cursor-pointer">
           Apply Now
         </Button>
