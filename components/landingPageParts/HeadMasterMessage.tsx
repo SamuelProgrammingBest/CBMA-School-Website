@@ -1,3 +1,4 @@
+import Link from "next/link"
 import FadeIn from "../FadeIn"
 
 const HeadMasterMessage = () => {
@@ -29,10 +30,11 @@ const HeadMasterMessage = () => {
           {/* ✅ full width on mobile, auto on desktop */}
           <div className="relative w-full md:w-auto">
             <img
-              src="/assets/medium.jpg"
+              src="/assets/headMistress.jpg"
               alt="Head Mistress Image"
               className="aspect-video w-full rounded-md object-cover md:w-150"
             />
+            <Link href="">
             <span className="absolute inset-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-accent p-2">
               <svg
                 xmlns="http://w3.org"
@@ -68,6 +70,7 @@ const HeadMasterMessage = () => {
                 />
               </svg>
             </span>
+            </Link>
           </div>
         </div>
       </div>
