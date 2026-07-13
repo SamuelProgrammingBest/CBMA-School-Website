@@ -46,6 +46,20 @@ const BlogAd = () => {
                 Refresh to get blogs
               </p>
             )}
+            {blogs.length <= 0 && (
+              <div className="flex min-h-75 flex-col items-center justify-center gap-3 text-center">
+                <div className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                  Coming Soon
+                </div>
+                <h2 className="text-2xl font-bold text-foreground">
+                  No Stories Yet
+                </h2>
+                <p className="max-w-sm text-slate-500">
+                  Our teachers are cooking up something great. Check back soon
+                  for insights, updates, and stories from the CBMA community.
+                </p>
+              </div>
+            )}
             {blogs.slice(0, 3).map((blog: Blog, i: number) => (
               <BlogCard
                 img={blog.coverImage}
