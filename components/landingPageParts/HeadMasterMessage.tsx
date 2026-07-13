@@ -32,7 +32,7 @@ const HeadMasterMessage = () => {
             <img
               src="/assets/headMistress.jpg"
               alt="Head Mistress Image"
-              className="aspect-video w-full rounded-md object-cover md:w-150"
+              className="aspect-video w-full rounded-md object-cover md:w-150 object-top"
             />
             <Link href="">
             <span className="absolute inset-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-accent p-2">
