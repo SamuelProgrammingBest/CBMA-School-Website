@@ -58,6 +58,19 @@ const GalleryPage = () => {
               </p>
             </div>
           )}
+          {data.length <= 0 && (
+            <div className="flex min-h-75 flex-col items-center justify-center gap-3 text-center">
+              <div className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
+                Coming Soon
+              </div>
+              <h2 className="text-2xl font-bold text-foreground">
+                No Images Yet
+              </h2>
+              <p className="max-w-sm text-slate-500">
+                More images coming soon from the CBMA community.
+              </p>
+            </div>
+          )}
 
           {!loading && !errorMsg && (
             <>
