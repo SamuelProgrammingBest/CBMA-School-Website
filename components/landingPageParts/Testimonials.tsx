@@ -12,28 +12,28 @@ import FadeIn from "../FadeIn"
 const Testimonials = () => {
   const testimonials = [
     {
-      name: "Mrs. Adeyemi",
-      text: "My daughter has blossomed since joining CBMA. The teachers are exceptional.",
+      name: "Mrs. Faith Omoregie",
+      text: "I'm impressed. Keep up the good work",
       role: "Parent",
     },
     {
       name: "Mr. Okonkwo",
-      text: "The level of attention each child gets here is unlike any school I've seen.",
+      text: "The school is doing well. Thanks to all the staff (teaching and non-teaching). God bless you all",
       role: "Parent",
     },
     {
       name: "Mrs. Bello",
-      text: "CBMA gave my son the confidence he needed. We couldn't be happier.",
+      text: "The school is getting better by the day. Great job. Please keep it up",
       role: "Parent",
     },
     {
       name: "Mr. Ibrahim",
-      text: "Academic excellence plus strong moral values. Exactly what we wanted.",
+      text: "Excellent job keep it up.",
       role: "Parent",
     },
     {
       name: "Mrs. Chukwu",
-      text: "The school events and communication with parents is top notch.",
+      text: "Thank you for the good work. God bless you",
       role: "Parent",
     },
   ]
@@ -63,9 +63,6 @@ const Testimonials = () => {
                   </div>
 
                   <p className="mt-2 mb-4 text-gray-600">{t.text}</p>
-                  <p className="font-heading font-bold text-primary">
-                    {t.name}
-                  </p>
                   <p className="text-sm text-gray-400">{t.role}</p>
                   <div className="mt-4 h-[2.5px] w-12 rounded-full bg-primary" />
                 </div>
