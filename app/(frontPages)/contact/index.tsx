@@ -52,7 +52,7 @@ const ContactPage = () => {
       <FadeIn className="px-6 py-12 md:py-24">
         <div className="mx-auto max-w-7xl overflow-hidden shadow-md">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.5110668667276!2d7.411948474067719!3d9.108225287745753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e75425b221857%3A0x3c1922e22fbd2f97!2sCornerstone%20Baptist%20Church%20gwarinpa!5e0!3m2!1sen!2sng!4v1780835980078!5m2!1sen!2sng"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3939.520483582864!2d7.411457975019833!3d9.107370990957147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e751b2d87c4cb%3A0xcecdab2db3496d51!2sCornerstone%20Baptist%20Model%20Academy!5e0!3m2!1sen!2sng!4v1783945690025!5m2!1sen!2sng"
             className="h-87.5 w-full md:h-125"
             loading="lazy"
           ></iframe>

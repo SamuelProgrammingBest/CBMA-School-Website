@@ -36,6 +36,31 @@ const Testimonials = () => {
       text: "Thank you for the good work. God bless you",
       role: "Parent",
     },
+    {
+      name: "Mrs. Chukwu",
+      text: "Good works by the teacher",
+      role: "Parent",
+    },
+    {
+      name: "Mrs. Chukwu",
+      text: "Thank you for the good work. God bless you",
+      role: "Parent",
+    },
+    {
+      name: "Mrs. Chukwu",
+      text: "We can see the improvement and are very appreciative for a job well done",
+      role: "Parent",
+    },
+    {
+      name: "Mrs. Chukwu",
+      text: "I have observed a tremendous improvement in my child's performance. I appreciate the teachers effort. May God continue to help you and the school at large",
+      role: "Parent",
+    },
+    {
+      name: "Mrs. Chukwu",
+      text: "The teacher's  are doing a wonderful job",
+      role: "Parent",
+    },
   ]
 
   return (
