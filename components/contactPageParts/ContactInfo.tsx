@@ -36,8 +36,8 @@ const ContactInfo = () => {
   ]
 
   return (
-    <section className="px-6 py-24">
-      <div className="mx-auto grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+    <section className="px-6 py-12 md:py-24">
+      <div className="mx-auto grid gap-6 lg:grid-cols-3">
         {
           /* Container applies stagger to children */
           info.map((item, i) => (

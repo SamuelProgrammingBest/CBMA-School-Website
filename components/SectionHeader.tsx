@@ -14,7 +14,7 @@ const SectionHeader = ({
   desc: string
 }) => {
   return (
-    <section className="relative overflow-hidden py-24">
+    <section className="relative overflow-hidden py-14 md:py-24">
       <motion.div
         className="absolute top-0 left-0 h-72 w-72 rounded-full bg-lime-300/20 blur-3xl"
         initial={{
@@ -44,7 +44,7 @@ const SectionHeader = ({
         </motion.span>
 
         <motion.h1
-          className="fredoka mt-6 text-5xl font-bold text-slate-900 capitalize md:text-6xl"
+          className="fredoka mt-6 text-3xl font-bold text-slate-900 capitalize md:text-5xl lg:text-6xl"
           variants={item}
         >
           {title}

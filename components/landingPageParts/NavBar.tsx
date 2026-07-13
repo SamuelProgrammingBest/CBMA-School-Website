@@ -33,7 +33,7 @@ const NavBar = () => {
       <NavigationMenu className="w-full bg-white/80 shadow-sm backdrop-blur-sm">
         <div className="flex w-full items-center justify-between px-6 py-4">
           <Link href="/">
-            <Image src="/assets/medium.jpg" alt="CBMA Logo" height={30} width={30} />
+            <Image src="/assets/school-logo.png" alt="CBMA Logo" height={50} width={50} />
           </Link>
 
           <NavigationMenuList className="hidden cursor-pointer items-center justify-center gap-7 md:flex">
@@ -56,14 +56,14 @@ const NavBar = () => {
             })}
           </NavigationMenuList>
 
-          <Link href="/apply" className="hidden md:flex">
+          <Link href="/apply" target="_blank" className="hidden md:flex">
             <Button className="cursor-pointer bg-primary opacity-85 transition hover:opacity-100">
               Apply for Admission
             </Button>
           </Link>
 
           <button
-            className="text-slate-700 md:hidden"
+            className="text-slate-700 md:hidden cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
             aria-label={isOpen ? "Close menu" : "Open menu"}
           >
@@ -95,7 +95,7 @@ const NavBar = () => {
                   </Link>
                 )
               })}
-              <Link href="/admissions" onClick={() => setIsOpen(false)}>
+              <Link href="/apply" target="_blank" onClick={() => setIsOpen(false)}>
                 <Button className="w-full cursor-pointer bg-primary opacity-85 transition hover:opacity-100">
                   Apply for Admission
                 </Button>

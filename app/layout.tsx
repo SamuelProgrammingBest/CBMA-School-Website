@@ -33,9 +33,9 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable, nunito.variable, dmSans.variable)}
+      className={cn("antialiased overflow-x-hidden mx-auto", fontMono.variable, "font-sans", geist.variable, nunito.variable, dmSans.variable)}
     >
-      <body className="bg-[#F8FAFC] text-[#0F172A]">
+      <body className="bg-[#F8FAFC] text-[#0F172A] overflow-x-hidden selection:bg-accent-foreground selection:text-white">
         {children}
       </body>
     </html>

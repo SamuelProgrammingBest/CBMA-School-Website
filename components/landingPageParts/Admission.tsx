@@ -33,13 +33,13 @@ const AdmissionAd = () => {
 
         {/* ✅ w-[500px] → w-full max-w-[500px] */}
         <motion.img
-          src="/assets/medium.jpg"
+          src="/assets/admission.png"
           alt="Serious student"
           className="aspect-4/3 w-full max-w-125 rounded-md object-cover"
         />
 
-        <Link href="/apply">
-        <Button className="text-md cursor-pointer bg-primary p-5 text-white hover:bg-accent-foreground">
+        <Link href="/apply" target="_blank">
+        <Button className="text-md cursor-pointer bg-primary opacity-90 p-5 text-white hover:opacity-100">
           Apply Now
         </Button>
         </Link>

@@ -2,7 +2,7 @@ import { Heart, Star } from "lucide-react";
 import FadeIn from "../FadeIn";
 
 const MissionVision = () => (
-  <section className="bg-slate-50 py-24">
+  <section className="bg-slate-50 py-12 md:py-24">
     <div className="mx-auto max-w-6xl px-6">
       <FadeIn className="mb-12 text-center">
         <p className="mb-2 text-sm font-bold text-primary">WHAT DRIVES US</p>
@@ -19,10 +19,7 @@ const MissionVision = () => (
           </div>
           <h3 className="mb-3 text-xl font-bold text-foreground">Our Mission</h3>
           <p className="text-slate-600 leading-relaxed">
-            To provide a nurturing and inclusive environment where every child
-            can thrive academically, socially, and emotionally — fostering a
-            love for learning and preparing students to become responsible
-            global citizens.
+            CBMA stands to promote and inculcate spiritual, moral, social and academic excellence in line with God's word and our uniquely designed curriculum to meet every aspect of the early child education
           </p>
         </div>
 
@@ -33,9 +30,7 @@ const MissionVision = () => (
           </div>
           <h3 className="mb-3 text-xl font-bold text-foreground">Our Vision</h3>
           <p className="text-slate-600 leading-relaxed">
-            To be a leading model academy that produces confident, creative,
-            and compassionate leaders who will make a lasting positive impact
-            on their communities and the world at large.
+            Our vision at CBMA is to plant seeds of lifelong learning, inspire and nurture children as they dicover their innate abilities
           </p>
         </div>
       </FadeIn>

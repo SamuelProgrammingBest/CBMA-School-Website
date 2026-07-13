@@ -9,10 +9,10 @@ const HeadMasterMessage = () => {
         </p>
 
         {/* ✅ flex-col on mobile, flex-row on desktop + sane padding */}
-        <div className="flex flex-col items-center justify-between gap-8 p-6 md:flex-row md:p-16">
-          
+        {/* // Toned down the desktop padding — md:p-16 was too aggressive */}
+        <div className="flex flex-col items-center justify-between gap-8 p-6 md:flex-row md:p-10 lg:p-16">
           {/* ✅ full width on mobile, half on desktop */}
-          <div className="w-full md:w-1/2 text-center md:text-left">
+          <div className="w-full text-center md:w-1/2 md:text-left">
             <h1 className="mb-4 text-[24px] font-bold text-accent md:text-[30px]">
               MEET OUR HEAD MISTRESS
             </h1>
@@ -31,7 +31,7 @@ const HeadMasterMessage = () => {
             <img
               src="/assets/medium.jpg"
               alt="Head Mistress Image"
-              className="w-full rounded-md object-cover md:w-150 aspect-video"
+              className="aspect-video w-full rounded-md object-cover md:w-150"
             />
             <span className="absolute inset-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-accent p-2">
               <svg

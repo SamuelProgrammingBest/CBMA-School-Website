@@ -17,9 +17,7 @@ const Footer = () => {
         {/* Column 1 - Brand */}
         <div className="md:col-span-1">
           {/* ✅ Replace placeholder image with school name until real logo arrives */}
-          <h3 className="font-heading text-2xl font-bold text-white mb-2">
-            CBMA
-          </h3>
+          <Image src="/assets/school-logo.png" alt="CBMA Logo" height={50} width={50} className="mb-3"/>
           <p className="text-emerald-100 text-sm mb-4">
             Cornerstone Baptist Model Academy — nurturing bright minds since 2003.
           </p>

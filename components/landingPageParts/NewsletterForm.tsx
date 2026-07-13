@@ -4,7 +4,7 @@ import Link from "next/link"
 
 const NewsletterForm = () => {
   return (
-    <FadeIn className="py-24">
+    <FadeIn className="py-12 md:py-24">
   <section className="dotted py-16 px-6 text-center">
     <h2 className="fredoka mb-4 text-3xl font-bold text-foreground md:text-4xl">
       Ready to Join the{" "}
@@ -14,7 +14,7 @@ const NewsletterForm = () => {
       Give your child the foundation they deserve. Applications are open.
     </p>
     <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-      <Link href="/apply">
+      <Link href="/apply" target="_blank">
         <Button className="w-full bg-primary px-8 py-5 font-bold text-white hover:bg-emerald-700 sm:w-auto cursor-pointer">
           Apply Now
         </Button>

@@ -11,7 +11,15 @@ import {
 } from "./ui/dialog"
 import Image from "next/image"
 
-const GalleryCard = ({ img, title, desc }: { img: string; title: string; desc: string }) => {
+const GalleryCard = ({
+  img,
+  title,
+  desc,
+}: {
+  img: string
+  title: string
+  desc: string
+}) => {
   return (
     <div className="group relative overflow-hidden rounded-3xl border border-emerald-100 bg-white p-2 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
       <Dialog>
@@ -24,19 +32,31 @@ const GalleryCard = ({ img, title, desc }: { img: string; title: string; desc: s
             <Image
               src={img}
               alt={title}
-              className="h-72 w-full object-cover transition duration-500 group-hover:scale-110"
+              className="h-60 w-full object-cover transition duration-500 group-hover:scale-110 md:h-72"
               height={288}
               width={500}
             />
           </div>
         </DialogTrigger>
 
-        <DialogContent showCloseButton>
-          <DialogHeader>
-            <DialogTitle>{title}</DialogTitle>
-            <DialogDescription>{desc}</DialogDescription>
-          </DialogHeader>
-          <Image src={img} alt={title} height={900} width={900} className="min-h-72 w-full object-cover" />
+        <DialogContent className="max-w-4xl overflow-hidden rounded-2xl p-0">
+          <Image
+            src={img}
+            alt={title}
+            height={900}
+            width={900}
+            className="max-h-[75vh] w-full object-cover"
+          />
+          <div className="p-6">
+            <DialogHeader>
+              <DialogTitle className="text-xl font-bold text-foreground">
+                {title}
+              </DialogTitle>
+              <DialogDescription className="mt-2 text-base leading-relaxed text-slate-600">
+                {desc}
+              </DialogDescription>
+            </DialogHeader>
+          </div>
         </DialogContent>
       </Dialog>
     </div>

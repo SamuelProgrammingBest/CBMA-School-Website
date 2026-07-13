@@ -31,16 +31,28 @@ const BlogCardsCol = () => {
     getBlogs()
   }, [])
 
+  // 1. Loading state — center it properly
   if (loading) {
-    return <Loader2 className="animate-spin" />
+    return (
+      <div className="flex min-h-75 items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
   }
 
+  // 2. Error state — same treatment
   if (errorMsg) {
-    return <p className="text-center text-xl font-bold">Refresh to get blogs</p> // your "Refresh to get blogs" message
+    return (
+      <div className="flex min-h-75 items-center justify-center">
+        <p className="text-center text-xl font-bold">Refresh to get blogs</p>
+      </div>
+    )
   }
+
+  // 3. mt-25 → mt-12 md:mt-20
 
   return (
-    <FadeIn className="mt-25 px-6 pb-24">
+    <FadeIn className="mt-12 px-6 pb-16 md:mt-20 md:pb-24">
       <div className="mx-auto max-w-7xl">
         <motion.div
           className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"

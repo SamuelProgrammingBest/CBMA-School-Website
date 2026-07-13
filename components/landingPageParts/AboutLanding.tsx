@@ -4,6 +4,7 @@ import { Button } from "../ui/button"
 import Link from "next/link"
 import { WholeWordIcon } from "lucide-react"
 import FadeIn from "../FadeIn"
+import Image from "next/image"
 
 const AboutLanding = () => {
   return (
@@ -40,14 +41,18 @@ const AboutLanding = () => {
       </div>
 
       {/* ✅ Fixed: hidden on mobile, only shows on large screens */}
-      <img
-        src="/assets/medium.jpg"
+      <Image
+        width={200}
+        height={250}
+        src="/assets/firstAbt.jpg"
         alt="Children playing"
         className="absolute top-15 -left-60 hidden -rotate-10 rounded-md drop-shadow-2xl lg:block"
       />
 
-      <img
-        src="/assets/medium.jpg"
+      <Image
+        width={210}
+        height={250}
+        src="/assets/secondAbt.jpg"
         alt="Children playing"
         className="absolute -right-60 bottom-15 hidden rotate-10 rounded-md drop-shadow-2xl lg:block"
       />

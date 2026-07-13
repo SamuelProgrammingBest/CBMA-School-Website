@@ -48,7 +48,7 @@ const CreateGalleryImagePage = () => {
     onSubmit: (values) => createImage(values),
     validationSchema: yup.object({
       title: yup.string().required("Title is required"),
-      description: yup.string().required("Description is required"),
+      description: yup.string(),
       image: yup
         .mixed()
         .required("An image is required")
@@ -96,7 +96,7 @@ const CreateGalleryImagePage = () => {
 
           <div>
             <label htmlFor="description" className="mb-1 block text-sm font-medium text-slate-700">
-              Description
+              Description (Optional)
             </label>
             <input
               id="description"

@@ -9,7 +9,7 @@ const MissionLanding = () => {
         
         {/* ✅ Fixed image size — full width on mobile, fixed on desktop */}
         <Image
-          src="/assets/medium.jpg"
+          src="/assets/youngMinds.jpg"
           alt="Mission Image"
           className="h-75 w-full rounded-md object-cover md:h-100 md:w-100"
           width={400}

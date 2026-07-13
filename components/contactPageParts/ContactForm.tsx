@@ -9,6 +9,7 @@ import { Loader2 } from "lucide-react"
 
 const ContactForm = () => {
   const [errorMsg, setErrorMsg] = useState("")
+  const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
 
   const submitEnquiry = async (value: Record<string, any>) => {
@@ -28,7 +29,9 @@ const ContactForm = () => {
       console.log(response.message)
       formik.resetForm()
     } catch (error) {
-      setErrorMsg(error instanceof Error ? `There is an error: ${error.message}` : "")
+      setErrorMsg(
+        error instanceof Error ? `There is an error: ${error.message}` : ""
+      )
     } finally {
       setLoading(false)
     }
@@ -44,21 +47,45 @@ const ContactForm = () => {
     onSubmit: (values) => submitEnquiry(values),
     validationSchema: yup.object({
       name: yup.string().required("Name is required"),
-      email: yup.string().email("Please enter a valid email").required("Email is required"),
+      email: yup
+        .string()
+        .email("Please enter a valid email")
+        .required("Email is required"),
       phoneNo: yup.string().required("Phone Number is required"),
       message: yup.string().required("Message is required"),
     }),
   })
 
   return (
-    <FadeIn className="px-6 py-24">
+    <FadeIn className="px-6 py-12 md:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
         <div className="rounded-3xl bg-white p-6 shadow-lg md:p-10">
-          <h2 className="text-3xl font-bold text-slate-900">Send Us A Message</h2>
+          {success && (
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 px-4 py-4">
+              <p className="text-sm font-semibold text-primary">
+                Message sent!
+              </p>
+              <p className="mt-0.5 text-sm text-slate-600">
+                We've received your enquiry and will get back to you shortly.
+              </p>
+            </div>
+          )}
+
+          {errorMsg && (
+            <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">
+              {errorMsg}
+            </p>
+          )}
+          <h2 className="text-3xl font-bold text-slate-900">
+            Send Us A Message
+          </h2>
 
           <form onSubmit={formik.handleSubmit} className="mt-6 space-y-4">
             <div>
-              <label htmlFor="name" className="mb-1 block text-sm font-medium text-slate-700">
+              <label
+                htmlFor="name"
+                className="mb-1 block text-sm font-medium text-slate-700"
+              >
                 Name
               </label>
               <input
@@ -75,12 +102,17 @@ const ContactForm = () => {
                 }`}
               />
               {formik.touched.name && formik.errors.name && (
-                <p className="mt-1 text-xs text-destructive">{formik.errors.name}</p>
+                <p className="mt-1 text-xs text-destructive">
+                  {formik.errors.name}
+                </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="email" className="mb-1 block text-sm font-medium text-slate-700">
+              <label
+                htmlFor="email"
+                className="mb-1 block text-sm font-medium text-slate-700"
+              >
                 Email
               </label>
               <input
@@ -97,12 +129,17 @@ const ContactForm = () => {
                 }`}
               />
               {formik.touched.email && formik.errors.email && (
-                <p className="mt-1 text-xs text-destructive">{formik.errors.email}</p>
+                <p className="mt-1 text-xs text-destructive">
+                  {formik.errors.email}
+                </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="phoneNo" className="mb-1 block text-sm font-medium text-slate-700">
+              <label
+                htmlFor="phoneNo"
+                className="mb-1 block text-sm font-medium text-slate-700"
+              >
                 Phone Number
               </label>
               <input
@@ -119,12 +156,17 @@ const ContactForm = () => {
                 }`}
               />
               {formik.touched.phoneNo && formik.errors.phoneNo && (
-                <p className="mt-1 text-xs text-destructive">{formik.errors.phoneNo}</p>
+                <p className="mt-1 text-xs text-destructive">
+                  {formik.errors.phoneNo}
+                </p>
               )}
             </div>
 
             <div>
-              <label htmlFor="message" className="mb-1 block text-sm font-medium text-slate-700">
+              <label
+                htmlFor="message"
+                className="mb-1 block text-sm font-medium text-slate-700"
+              >
                 Message
               </label>
               <textarea
@@ -141,12 +183,16 @@ const ContactForm = () => {
                 }`}
               />
               {formik.touched.message && formik.errors.message && (
-                <p className="mt-1 text-xs text-destructive">{formik.errors.message}</p>
+                <p className="mt-1 text-xs text-destructive">
+                  {formik.errors.message}
+                </p>
               )}
             </div>
 
             {errorMsg && (
-              <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">{errorMsg}</p>
+              <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">
+                {errorMsg}
+              </p>
             )}
 
             <button
@@ -166,7 +212,7 @@ const ContactForm = () => {
           </form>
         </div>
 
-        <div className="overflow-hidden rounded-3xl">
+        <div className="hidden overflow-hidden rounded-3xl lg:block">
           <Image
             src="/assets/3907.jpg"
             alt="Children playing in school"

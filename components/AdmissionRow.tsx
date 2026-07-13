@@ -14,13 +14,29 @@ import { Button } from "./ui/button"
 import { TableCell, TableRow } from "./ui/table"
 import { Loader2 } from "lucide-react"
 import { Admission } from "@/lib/admissionType"
-// import { Admission } from "./AdmissionsPage"
 
 const statusStyles: Record<Admission["status"], string> = {
   pending: "bg-slate-100 text-slate-600",
   admitted: "bg-primary/10 text-primary",
   rejected: "bg-destructive/10 text-destructive",
 }
+
+// Reusable field component
+const Field = ({ label, value, col2 }: { label: string; value?: string | boolean; col2?: boolean }) =>
+  value !== undefined && value !== "" && value !== null ? (
+    <div className={col2 ? "col-span-2" : ""}>
+      <p className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">{label}</p>
+      <p className="mt-0.5 text-sm text-slate-700">{String(value)}</p>
+    </div>
+  ) : null
+
+// Reusable section component
+const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  <div className="rounded-2xl border border-slate-100 bg-slate-50 p-4">
+    <p className="mb-3 text-xs font-bold uppercase tracking-widest text-primary">{title}</p>
+    {children}
+  </div>
+)
 
 const AdmissionRow = ({
   application,
@@ -33,7 +49,6 @@ const AdmissionRow = ({
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const [errorMsg, setErrorMsg] = useState("")
-
   const [status, setStatus] = useState(application.status)
   const [admissionNo, setAdmissionNo] = useState(application.admissionNo || "")
   const [designation, setDesignation] = useState(application.designation || "")
@@ -77,65 +92,102 @@ const AdmissionRow = ({
           <DialogTrigger asChild>
             <Button size="sm">View</Button>
           </DialogTrigger>
+
           <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-lg">
+
+            {/* Top identity block */}
             <DialogHeader>
-              <DialogTitle>{application.firstName} {application.surname}</DialogTitle>
-              <DialogDescription>
-                Applied {new Date(application.createdAt).toLocaleDateString()}
-              </DialogDescription>
+              <div className="flex items-center gap-4">
+                <img
+                  src={application.childPhoto}
+                  alt="Child"
+                  className="h-14 w-14 rounded-2xl object-cover ring-2 ring-primary/20"
+                />
+                <div>
+                  <DialogTitle className="text-lg">
+                    {application.firstName} {application.surname}
+                  </DialogTitle>
+                  <DialogDescription className="mt-0.5">
+                    Applied {new Date(application.createdAt).toLocaleDateString("en-GB", {
+                      day: "numeric", month: "short", year: "numeric",
+                    })}
+                  </DialogDescription>
+                  <span className={`mt-1 inline-block rounded-full px-2.5 py-0.5 text-xs font-medium capitalize ${statusStyles[application.status]}`}>
+                    {application.status}
+                  </span>
+                </div>
+              </div>
             </DialogHeader>
 
-            <div className="space-y-5 text-sm">
-              <div>
-                <h3 className="mb-2 font-semibold text-foreground">Child Information</h3>
-                <div className="grid grid-cols-2 gap-2 text-slate-600">
-                  <p>DOB: {new Date(application.dob).toLocaleDateString()}</p>
-                  <p>Sex: {application.sex}</p>
-                  <p>Nationality: {application.nationality}</p>
-                  <p>State of Origin: {application.stateOfOrigin}</p>
-                  {application.bloodGroup && <p>Blood Group: {application.bloodGroup}</p>}
-                  {application.ailment && <p className="col-span-2">Ailment: {application.ailment}</p>}
-                  {application.onMedication && <p className="col-span-2">Medication: {application.onMedication}</p>}
-                  <p className="col-span-2">
-                    Cries Often: {application.criesOften ? "Yes" : "No"}
-                    {application.criesOftenReason && ` — ${application.criesOftenReason}`}
-                  </p>
-                </div>
-                <img src={application.childPhoto} alt="Child" className="mt-2 h-24 w-24 rounded-lg object-cover" />
-              </div>
+            <div className="mt-2 space-y-3 text-sm">
 
-              <div className="border-t border-slate-100 pt-4">
-                <h3 className="mb-2 font-semibold text-foreground">Parent / Guardian</h3>
-                <div className="grid grid-cols-2 gap-2 text-slate-600">
-                  <p>Phone: {application.phone}</p>
-                  <p>Email: {application.email}</p>
-                  <p>Occupation: {application.occupation}</p>
-                  <p className="col-span-2">Address: {application.homeAddress}</p>
-                  {application.officeAddress && <p className="col-span-2">Office: {application.officeAddress}</p>}
+              {/* Child info */}
+              <Section title="Child Information">
+                <div className="grid grid-cols-2 gap-3">
+                  <Field label="Date of Birth" value={new Date(application.dob).toLocaleDateString()} />
+                  <Field label="Sex" value={application.sex} />
+                  <Field label="Nationality" value={application.nationality} />
+                  <Field label="State of Origin" value={application.stateOfOrigin} />
+                  <Field label="Blood Group" value={application.bloodGroup} />
+                  <Field label="Ailment" value={application.ailment} col2 />
+                  <Field label="On Medication" value={application.onMedication} col2 />
+                  <Field
+                    label="Cries Often"
+                    value={application.criesOften
+                      ? `Yes${application.criesOftenReason ? ` — ${application.criesOftenReason}` : ""}`
+                      : "No"}
+                    col2
+                  />
                 </div>
-                <img src={application.parentPhoto} alt="Parent" className="mt-2 h-24 w-24 rounded-lg object-cover" />
-              </div>
+              </Section>
 
-              <div className="border-t border-slate-100 pt-4">
-                <h3 className="mb-2 font-semibold text-foreground">Pickup & Emergency Contact</h3>
-                <div className="grid grid-cols-2 gap-2 text-slate-600">
-                  <p>Authorized: {application.assigneeName}</p>
-                  <p>Emergency: {application.emergencyName} ({application.emergencyRelationship})</p>
-                  <p className="col-span-2">Emergency Address: {application.emergencyAddress}</p>
-                  <p>Emergency Phone: {application.emergencyPhone}</p>
+              {/* Parent info */}
+              <Section title="Parent / Guardian">
+                <div className="flex items-start gap-4">
+                  <img
+                    src={application.parentPhoto}
+                    alt="Parent"
+                    className="h-12 w-12 shrink-0 rounded-xl object-cover ring-2 ring-slate-200"
+                  />
+                  <div className="grid flex-1 grid-cols-2 gap-3">
+                    <Field label="Name" value={application.parentName} />
+                    <Field label="Phone" value={application.phone} />
+                    <Field label="Email" value={application.email} col2 />
+                    <Field label="Occupation" value={application.occupation} col2 />
+                    <Field label="Home Address" value={application.homeAddress} col2 />
+                    <Field label="Office Address" value={application.officeAddress} col2 />
+                  </div>
                 </div>
-                <img src={application.assigneePhoto} alt="Assignee" className="mt-2 h-24 w-24 rounded-lg object-cover" />
-              </div>
+              </Section>
 
-              <div className="border-t border-slate-100 pt-4">
-                <h3 className="mb-3 font-semibold text-foreground">Decision</h3>
+              {/* Pickup & Emergency */}
+              <Section title="Pickup & Emergency Contact">
+                <div className="flex items-start gap-4">
+                  <img
+                    src={application.assigneePhoto}
+                    alt="Assignee"
+                    className="h-12 w-12 shrink-0 rounded-xl object-cover ring-2 ring-slate-200"
+                  />
+                  <div className="grid flex-1 grid-cols-2 gap-3">
+                    <Field label="Authorized Pickup" value={application.assigneeName} col2 />
+                    <Field label="Emergency Contact" value={`${application.emergencyName} (${application.emergencyRelationship})`} col2 />
+                    <Field label="Emergency Phone" value={application.emergencyPhone} />
+                    <Field label="Emergency Address" value={application.emergencyAddress} col2 />
+                  </div>
+                </div>
+              </Section>
+
+              {/* Decision */}
+              <Section title="Decision">
                 <div className="space-y-3">
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">Status</label>
+                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      Status
+                    </label>
                     <select
                       value={status}
                       onChange={(e) => setStatus(e.target.value as Admission["status"])}
-                      className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
                     >
                       <option value="pending">Pending</option>
                       <option value="admitted">Admitted</option>
@@ -145,28 +197,34 @@ const AdmissionRow = ({
 
                   {status === "admitted" && (
                     <div>
-                      <label className="mb-1 block text-sm font-medium text-slate-700">Admission Number</label>
+                      <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-400">
+                        Admission Number
+                      </label>
                       <input
                         type="text"
                         value={admissionNo}
                         onChange={(e) => setAdmissionNo(e.target.value)}
-                        className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
+                        className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
                       />
                     </div>
                   )}
 
                   <div>
-                    <label className="mb-1 block text-sm font-medium text-slate-700">Processed By</label>
+                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-400">
+                      Processed By
+                    </label>
                     <input
                       type="text"
                       value={designation}
                       onChange={(e) => setDesignation(e.target.value)}
-                      className="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
+                      className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-primary/30"
                     />
                   </div>
 
                   {errorMsg && (
-                    <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">{errorMsg}</p>
+                    <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">
+                      {errorMsg}
+                    </p>
                   )}
 
                   <button
@@ -184,7 +242,8 @@ const AdmissionRow = ({
                     )}
                   </button>
                 </div>
-              </div>
+              </Section>
+
             </div>
           </DialogContent>
         </Dialog>

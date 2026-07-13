@@ -1,18 +1,20 @@
 "use client"
 import GalleryCard from "@/components/GalleryCard"
 import React, { useEffect, useState } from "react"
-import { motion } from "motion/react"
-import { container, item } from "@/lib/utils"
 import SectionHeader from "@/components/SectionHeader"
 import { GalleryImage } from "@/app/admin/dashboard/gallery/page"
-import { useAuth } from "@/context/AuthContext"
 import { apiCall } from "@/lib/api"
 import { Loader2 } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+const PAGE_SIZE = 12
 
 const GalleryPage = () => {
   const [data, setData] = useState<GalleryImage[]>([])
   const [errorMsg, setErrorMsg] = useState("")
   const [loading, setLoading] = useState(true)
+  const [strtVisible, setstrtVisible] = useState(0)
+  const [visible, setVisible] = useState(PAGE_SIZE)
 
   const getImages = async () => {
     try {
@@ -32,10 +34,6 @@ const GalleryPage = () => {
     getImages()
   }, [])
 
-  // if(loading) return <Loader2 className="animate-spin"/>
-
-  // if (errorMsg) return <p className="text-center font-bold text-xl">Refresh to get images</p>
-
   return (
     <main className="min-h-screen">
       <SectionHeader
@@ -45,25 +43,67 @@ const GalleryPage = () => {
         desc="Explore our gallery showcasing the vibrant life and memorable moments at our school."
       />
 
-      <section className="px-6 py-20">
+      <section className="px-6 py-12 md:py-20">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {loading && <Loader2 className="animate-spin" />}
-            {errorMsg ? (
-              <p className="text-md mx-auto text-center font-bold">
+          {loading && (
+            <div className="flex min-h-75 items-center justify-center">
+              <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+          )}
+
+          {errorMsg && (
+            <div className="flex min-h-75 items-center justify-center">
+              <p className="text-center text-xl font-bold">
                 Refresh to get images
               </p>
-            ) : (
-              data.map((item) => (
-                <GalleryCard
-                  img={item.image}
-                  key={item._id}
-                  title={item.title}
-                  desc={item.description}
-                />
-              ))
-            )}
-          </div>
+            </div>
+          )}
+
+          {!loading && !errorMsg && (
+            <>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {data.slice(strtVisible, visible).map((img) => (
+                  <GalleryCard
+                    img={img.image}
+                    key={img._id}
+                    title={img.title}
+                    desc={img.description ? img.description : ""}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                {strtVisible > 0 && (
+                  <Button
+                    onClick={() => {
+                      setstrtVisible((prev) => prev - PAGE_SIZE)
+                      setVisible((prev) => prev - PAGE_SIZE)
+                    }}
+                    className="w-full cursor-pointer border-2 border-primary bg-transparent px-8 py-5 font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-white sm:w-auto"
+                  >
+                    ← Previous
+                  </Button>
+                )}
+
+                <p className="text-sm text-slate-500">
+                  Showing {strtVisible + 1}–{Math.min(visible, data.length)} of{" "}
+                  {data.length}
+                </p>
+
+                {visible < data.length && (
+                  <Button
+                    onClick={() => {
+                      setstrtVisible((prev) => prev + PAGE_SIZE)
+                      setVisible((prev) => prev + PAGE_SIZE)
+                    }}
+                    className="w-full cursor-pointer border-2 border-primary bg-transparent px-8 py-5 font-bold text-primary transition-all duration-300 hover:bg-primary hover:text-white sm:w-auto"
+                  >
+                    Next ({data.length - visible} remaining) →
+                  </Button>
+                )}
+              </div>
+            </>
+          )}
         </div>
       </section>
     </main>

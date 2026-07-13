@@ -3,16 +3,16 @@ import FadeIn from "../FadeIn"
 
 const SchoolStory = () => (
   //   <section className="mx-auto max-w-6xl px-6 py-16">
-  <FadeIn className="py-24">
-    <div className="flex w-full flex-col items-center justify-center gap-8 p-6 md:flex-row md:p-8">
+  <FadeIn className="py-12 md:py-24">
+    <div className="flex w-full flex-col items-center justify-center gap-8 px-6 py-4 md:flex-row md:p-8">
       <Image
-        src="/assets/medium.jpg"
+        src="/assets/started.jpg"
         alt="School founding"
         className="h-75 w-full rounded-3xl object-cover md:h-100 md:w-1/2"
         width={400}
         height={300}
       />
-      <div className="w-full md:w-1/2 text-center md:text-left">
+      <div className="w-full text-center md:w-1/2 md:text-left">
         <p className="mb-2 text-sm font-bold text-primary">OUR STORY</p>
         <h2 className="mb-4 text-2xl font-bold text-foreground md:text-3xl">
           Where It All <span className="text-primary">Began</span>

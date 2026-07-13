@@ -8,7 +8,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import {
   BookCheckIcon,
   Calendar,
@@ -96,12 +101,13 @@ const AdmissionPage = () => {
         desc="Admissions are now open for the new academic session."
       />
 
-      <FadeIn className="px-6 py-24">
+      <FadeIn className="px-6 py-12 md:py-24">
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <p className="text-sm font-bold text-primary">WHY CBMA</p>
-
-            <h2 className="text-3xl font-bold">Why Parents Choose Us</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              Why Parents Choose Us
+            </h2>
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -119,13 +125,15 @@ const AdmissionPage = () => {
         </div>
       </FadeIn>
 
-      <FadeIn className="bg-slate-50 py-24">
+      <FadeIn className="bg-slate-50 py-12 md:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-12 text-center">
-            <h2 className="text-3xl font-bold">Admission Process</h2>
+            <h2 className="text-2xl font-bold md:text-3xl">
+              Admission Process
+            </h2>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-4">
+          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
             {steps.map((step, i) => (
               <div
                 key={i}
@@ -144,10 +152,12 @@ const AdmissionPage = () => {
         </div>
       </FadeIn>
 
-      <FadeIn className="px-6 py-24">
+      <FadeIn className="px-6 py-12 md:py-24">
         <div className="mx-auto max-w-5xl">
-          <div className="rounded-3xl border border-slate-200 bg-white p-8">
-            <h2 className="mb-6 text-3xl font-bold">Admission Requirements</h2>
+          <div className="rounded-3xl border border-slate-200 bg-white p-6 md:p-8">
+            <h2 className="mb-6 text-2xl font-bold md:text-3xl">
+              Admission Requirements
+            </h2>
 
             <ul className="space-y-4 text-secondary">
               <li>✓ Completed Application Form</li>
@@ -164,7 +174,7 @@ const AdmissionPage = () => {
         </div>
       </FadeIn>
 
-      <FadeIn className="py-24">
+      <FadeIn className="py-12 md:py-24">
         {/* defaultValue="item-0" keeps first item open */}
         <div className="mx-auto max-w-5xl px-6">
           {/* <h2 className="fredoka text-md mb-2 font-bold text-accent">
@@ -197,7 +207,7 @@ const AdmissionPage = () => {
         </div>
       </FadeIn>
 
-      <FadeIn className="dotted px-6 py-24 text-center">
+      <FadeIn className="dotted px-6 py-12 text-center md:py-24">
         <h2 className="fredoka mb-4 text-3xl font-bold text-foreground md:text-4xl">
           Ready to Join the <span className="text-primary">CBMA Family?</span>
         </h2>
