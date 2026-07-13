@@ -36,6 +36,9 @@ const Footer = () => {
             <Link href="https://whatsapp.com/channel/0029VbBkNqI1CYoY01rtF21s" target="_blank">
               <FaWhatsapp className="h-5 w-5 text-emerald-100 hover:text-white transition" />
             </Link>
+            <Link href="https://youtube.com/@cornerstonebaptistmodelacademy?si=nP7WTEiFmlq6HVPy" target="_blank">
+              <FaYoutube className="h-5 w-5 text-emerald-100 hover:text-white transition" />
+            </Link>
           </div>
         </div>
 

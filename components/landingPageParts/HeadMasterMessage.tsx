@@ -40,7 +40,7 @@ const HeadMasterMessage = () => {
               alt="Head Mistress Image"
               className="aspect-video w-full rounded-md object-cover object-[50%_21.5%] md:w-150"
             />
-            <Link href="https://youtu.be/NfnxLD3lc0M?si=0w82HA32QNzXnz2p">
+            <Link href="https://youtu.be/NfnxLD3lc0M?si=0w82HA32QNzXnz2p" target="_blank">
               <span className="absolute inset-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 transform animate-pulse rounded-full bg-accent p-2">
                 <svg
                   xmlns="http://w3.org"

@@ -16,12 +16,12 @@ const StatsCard = () => {
   let stats = [
     {
       icon: <User2Icon width={50} height={50} />,
-      header: "500+",
+      header: "150+",
       text: "Students",
     },
     {
       icon: <GraduationCap width={50} height={50} />,
-      header: "40+",
+      header: "30+",
       text: "Qualified Teachers",
     },
     {
