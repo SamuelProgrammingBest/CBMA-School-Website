@@ -67,7 +67,7 @@ const GalleryPage = () => {
                 No Images Yet
               </h2>
               <p className="max-w-sm text-slate-500">
-                More images coming soon from the CBMA community.
+                More images coming soon from CBMA.
               </p>
             </div>
           )}
