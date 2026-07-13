@@ -26,23 +26,10 @@ const SchoolStory = () => (
           both academic excellence and godly character.
         </p>
         <p className="text-[16px] leading-relaxed text-slate-600">
-          CBMA began with just 7 learners and a dedicated team of 5 staff
-          members who believed in that vision. Though our beginning was humble,
-          our commitment to raising children in an environment of Godliness,
-          Diligence, and Excellence has never changed. By God's grace, the trust
-          of our parents, and the dedication of our staff, the school has grown
-          remarkably. Today, Cornerstone Baptist Model Academy is proud to serve
-          over 100 learners with the support of more than 25 committed members
-          of staff, all working together to provide a safe, nurturing, and
-          inspiring learning environment.
+          From a humble beginning of just 7 learners and 5 dedicated staff members, CBMA has grown into a thriving school with over 100 learners and more than 25 committed staff. This growth reflects God's faithfulness, the trust of our parents, and the dedication of our team.
         </p>
         <p className="text-[16px] leading-relaxed text-slate-600">
-          As we continue to grow, we remain committed to the vision upon which
-          the school was founded—raising confident, disciplined, God-fearing,
-          and academically excellent learners who will positively impact their
-          families, communities, and the nation. Our story is one of faith,
-          growth, and purpose, and we look forward to writing many more chapters
-          of excellence in the years ahead.
+          Today, we remain committed to raising confident, disciplined, God-fearing learners who are equipped to excel academically and make a positive impact in their communities and beyond.
         </p>
       </div>
     </div>
