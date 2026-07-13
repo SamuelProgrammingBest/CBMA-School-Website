@@ -64,13 +64,13 @@ const Testimonials = () => {
   ]
 
   return (
-    <FadeIn className="mx-auto max-w-6xl px-4 md:px-6 overflow-hidden">
+    <FadeIn className="mx-auto max-w-6xl px-4 md:px-6">
       <h2 className="fredoka mb-10 text-center font-heading text-2xl font-bold text-foreground md:text-3xl">
         What Parents Are <span className="text-primary">Saying</span>
       </h2>
 
       {/* ✅ no px-10 on mobile, only on md+ */}
-      <div className="relative">
+      <div className="relative px-10 md:px-12">
         <Carousel className="w-full px-2 md:px-10">
           <CarouselContent>
             {testimonials.map((t, i) => (
