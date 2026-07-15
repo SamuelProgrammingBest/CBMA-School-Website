@@ -6,14 +6,16 @@ import FadeIn from "../FadeIn"
 import BlogCard from "../BlogCard"
 import { Blog } from "@/app/admin/dashboard/blog/page"
 import { apiCall } from "@/lib/api"
+import { Loader2 } from "lucide-react"
 
 const BlogAd = () => {
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [blogs, setBlogs] = useState<Blog[]>([])
   const [errorMsg, setErrorMsg] = useState("")
 
   const getBlogs = async () => {
     try {
+      setLoading(true)
       const response = await apiCall({
         method: "GET",
         pathName: "/get-blogs-client",
@@ -30,6 +32,14 @@ const BlogAd = () => {
     getBlogs()
   }, [])
 
+  if (loading) {
+    return (
+      <div className="flex min-h-75 items-center justify-center">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
   return (
     <FadeIn>
       {/* ✅ Neutral background instead of light green */}
@@ -40,12 +50,13 @@ const BlogAd = () => {
           </h1>
 
           {/* ✅ flex-col on mobile, flex-row on desktop */}
-          <div className="flex w-full flex-col items-center justify-evenly gap-6 md:flex-row">
+          <div className="w-full">
             {errorMsg && (
               <p className="rounded-lg bg-slate-300 px-3 py-2 text-sm text-destructive">
                 Refresh to get blogs
               </p>
             )}
+
             {blogs.length <= 0 && (
               <div className="flex min-h-75 flex-col items-center justify-center gap-3 text-center">
                 <div className="rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary">
@@ -60,17 +71,20 @@ const BlogAd = () => {
                 </p>
               </div>
             )}
-            {blogs.slice(0, 3).map((blog: Blog, i: number) => (
-              <BlogCard
-                img={blog.coverImage}
-                title={blog.title}
-                category={"Academic"}
-                desc={`${blog.content.slice(0, 100)}...`}
-                alt={blog.title}
-                key={i}
-                link={blog.slug}
-              />
-            ))}
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {blogs.slice(0, 3).map((blog: Blog, i: number) => (
+                <BlogCard
+                  img={blog.coverImage}
+                  title={blog.title}
+                  category={"Academic"}
+                  desc={`${blog.content.slice(0, 100)}...`}
+                  alt={blog.title}
+                  key={i}
+                  link={blog.slug}
+                />
+              ))}
+            </div>
           </div>
 
           {/* ✅ destructive red → primary green */}
