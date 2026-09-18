@@ -214,7 +214,7 @@ const ContactForm = () => {
 
         <div className="hidden overflow-hidden rounded-3xl lg:block">
           <Image
-            src="/assets/3907.jpg"
+            src="/assets/contact.jpg"
             alt="Children playing in school"
             className="h-full w-full object-cover"
             width={500}
