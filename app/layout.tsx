@@ -1,10 +1,16 @@
 import { Geist, Geist_Mono } from "next/font/google"
+import type { Metadata } from "next";
 
 import "./globals.css"
 // import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { Nunito, DM_Sans } from 'next/font/google'
 
+
+export const metadata: Metadata = {
+  title: "Cornerstone Baptist Model Academy",
+  description: "Welcome to Cornerstone Baptist Model Academy—a premier institution dedicated to raising leaders of excellence through a balanced foundation of sound academic instruction, strong moral values, and spiritual growth. Explore our programs, admissions info, and school community updates.",
+};
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'})
 const nunito = Nunito({ 

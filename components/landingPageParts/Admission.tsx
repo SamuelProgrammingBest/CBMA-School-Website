@@ -25,10 +25,7 @@ const AdmissionAd = () => {
 
         {/* ✅ w-250px (broken) → w-full max-w-2xl */}
         <p className="w-full max-w-2xl text-center text-[16px] text-secondary">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta facere
-          voluptas, nesciunt vitae doloribus in. Quod vel expedita minima
-          commodi cumque? Deleniti quisquam dolores illum, similique ducimus non
-          eum eius!
+          Admissions for the new academic session are officially ongoing at Cornerstone Baptist Model Academy! We invite parents and guardians seeking a holistic, values-driven, and academically rigorous environment for their children to apply. Enroll your child today and partner with us to build a solid foundation for their future!
         </p>
 
         {/* ✅ w-[500px] → w-full max-w-[500px] */}
