@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: "Cornerstone Baptist Model Academy",
   description: "Welcome to Cornerstone Baptist Model Academy—a premier institution dedicated to raising leaders of excellence through a balanced foundation of sound academic instruction, strong moral values, and spiritual growth. Explore our programs, admissions info, and school community updates.",
   icons: {
-    icon: 'school-logo.png', // Or the path relative to your public folder
+    icon: '/assets/school-logo.png', // Or the path relative to your public folder
   },
 };
 
