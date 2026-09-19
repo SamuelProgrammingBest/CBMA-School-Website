@@ -215,7 +215,7 @@ const AdmissionPage = () => {
           Give your child the foundation they deserve. Applications are open.
         </p>
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
-          <Link href="/apply">
+          <Link href="/apply" target="_blank">
             <Button className="w-full cursor-pointer bg-primary px-8 py-5 font-bold text-white hover:bg-emerald-700 sm:w-auto">
               Apply Now
             </Button>
