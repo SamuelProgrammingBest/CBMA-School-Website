@@ -36,29 +36,30 @@ const ContactInfo = () => {
   ]
 
   return (
-    <section className="px-6 py-12 md:py-24">
-      <div className="mx-auto grid gap-6 lg:grid-cols-3">
-        {
-          /* Container applies stagger to children */
-          info.map((item, i) => (
-            <motion.div
-              className="rounded-3xl bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg"
-              key={i}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.15, duration: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <div className="flex items-center gap-3">
-                {item.icon}
-                <h3 className="text-lg font-bold">{item.title}</h3>
-              </div>
-              <p className="mt-3 text-slate-600">{item.description}</p>
-            </motion.div>
-          ))
-        }
-      </div>
-    </section>
+    <section className="px-4 py-8 sm:px-6 md:py-24">
+  <div className="mx-auto grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-3 max-w-7xl w-full"> {/* Added grid-cols-1, max-width, and tight gaps */}
+    {
+      /* Container applies stagger to children */
+      info.map((item, i) => (
+        <motion.div
+          className="rounded-2xl bg-white p-6 sm:p-8 shadow-sm transition-all duration-300 md:hover:-translate-y-2 md:hover:shadow-lg"
+          key={i}
+          initial={{ opacity: 0, y: 20 }} 
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: i * 0.1, duration: 0.4 }} 
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          <div className="flex items-center gap-3">
+            <div className="shrink-0">{item.icon}</div> {/* Added flex-shrink-0 to keep icons from squishing if text wraps */}
+            <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug">{item.title}</h3> {/* Adjusted font scaling */}
+          </div>
+          <p className="mt-2 sm:mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">{item.description}</p>
+        </motion.div>
+      ))
+    }
+  </div>
+</section>
+
   )
 }
 

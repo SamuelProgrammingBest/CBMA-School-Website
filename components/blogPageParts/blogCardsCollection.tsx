@@ -73,7 +73,7 @@ const BlogCardsCol = () => {
       className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 w-full"
       variants={container}
       initial="hidden"
-      whileInView="show"
+      animate="show"
       viewport={{ once: true, amount: 0.1 }} 
     >
       {data
