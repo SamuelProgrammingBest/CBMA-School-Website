@@ -6,7 +6,7 @@ const HeadMasterMessage = () => {
     <FadeIn>
       <div className="w-full">
         <p className="mb-2 text-center text-[14px] font-bold text-primary">
-          A MESSAGE FROM THE HEAD MISTRESS
+          A MESSAGE FROM THE HEAD OF SCHOOL
         </p>
 
         {/* ✅ flex-col on mobile, flex-row on desktop + sane padding */}
