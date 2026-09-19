@@ -68,31 +68,32 @@ const BlogCardsCol = () => {
 
   return (
     <FadeIn className="mt-12 px-6 pb-16 md:mt-20 md:pb-24">
-      <div className="mx-auto max-w-7xl">
-        <motion.div
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-        >
-          {data
-            .filter((d) => d.isPublished)
-            .map((blog, i) => (
-              <BlogCard
-                img={blog.coverImage}
-                title={blog.title}
-                category={"Academic"}
-                desc={blog.shortDesc}
-                alt={blog.shortDesc}
-                key={blog._id}
-                variant={item}
-                link={blog.slug}
-              />
-            ))}
-        </motion.div>
-      </div>
-    </FadeIn>
+  <div className="mx-auto max-w-7xl w-full"> {/* Added w-full */}
+    <motion.div
+      className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 w-full"
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.1 }} 
+    >
+      {data
+        .filter((d) => d.isPublished)
+        .map((blog, i) => (
+          <BlogCard
+            img={blog.coverImage}
+            title={blog.title}
+            category={"Academic"}
+            desc={blog.shortDesc}
+            alt={blog.shortDesc}
+            key={blog._id}
+            variant={item}
+            link={blog.slug}
+          />
+        ))}
+    </motion.div>
+  </div>
+</FadeIn>
+
   )
 }
 

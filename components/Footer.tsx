@@ -19,7 +19,7 @@ const Footer = () => {
           {/* ✅ Replace placeholder image with school name until real logo arrives */}
           <Image src="/assets/school-logo.png" alt="CBMA Logo" height={50} width={50} className="mb-3"/>
           <p className="text-emerald-100 text-sm mb-4">
-            Cornerstone Baptist Model Academy — nurturing bright minds since 2003.
+            Cornerstone Baptist Model Academy — nurturing bright minds since 2018.
           </p>
 
           {/* ✅ Actual social icons instead of InspectionPanel */}
