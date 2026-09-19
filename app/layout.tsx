@@ -5,6 +5,7 @@ import "./globals.css"
 // import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils";
 import { Nunito, DM_Sans } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next';
 
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ export default function RootLayout({
     >
       <body className="bg-[#F8FAFC] text-[#0F172A] overflow-x-hidden selection:bg-accent-foreground selection:text-white">
         {children}
+        <Analytics />
       </body>
     </html>
   )
